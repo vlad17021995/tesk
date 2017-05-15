@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -60,6 +61,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 }
                 if (!regMailPass.getText().toString().equals(regConfirmPass.getText().toString())){
                     Toast.makeText(this, "пароли должны совпадать", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (!data.isEmailValid(regMailText.getText().toString())){
+                    Toast.makeText(this, "почтоый адрес имеет неправильный формат", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 int r = data.registerAccount(preferences, regMailText.getText().toString(), regMailPass.getText().toString());
