@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
  */
 
 public class LocalStorage {
-    private static LocalStorage locacStorage;
+    private static LocalStorage locacStorage;//static value
 
     private LocalStorage(){
 
