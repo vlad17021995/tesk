@@ -50,6 +50,16 @@ public class LocalStorage {
         }
     }
 
+    public String currentUser(SharedPreferences preferences, String key){
+        return preferences.getString(key, "");
+    }
+
+    public void setCurrentUser(SharedPreferences preferences, String key, String mail){
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(key, mail);
+        editor.commit();
+    }
+
     public static String md5Custom(String password) {
         MessageDigest md = null;
         try {

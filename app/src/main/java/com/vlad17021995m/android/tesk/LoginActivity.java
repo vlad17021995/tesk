@@ -43,6 +43,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             activities.remove(i);
             a.finish();
         }
+
+        LocalStorage data = LocalStorage.getInstance();
+        SharedPreferences preferences = getSharedPreferences(LOGIN_PREFERENCES, Context.MODE_PRIVATE);
+        String currUser = data.currentUser(preferences, KEY_EMAIL);
+        if (!currUser.equals("")){
+            Intent intent = new Intent(this, ViewActivity.class);
+            intent.putExtra(KEY_EMAIL, currUser);
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -53,6 +62,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.login_button:
                 int r = data.loginAccount(preferences, mailText.getText().toString(), passText.getText().toString());
                 if (r == 0){
+                    data.setCurrentUser(preferences, KEY_EMAIL, mailText.getText().toString());
                     Intent intent = new Intent(this, ViewActivity.class);
                     intent.putExtra(KEY_EMAIL, mailText.getText().toString());
                     startActivity(intent);

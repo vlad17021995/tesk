@@ -1,7 +1,9 @@
 package com.vlad17021995m.android.tesk;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -45,6 +47,9 @@ public class ViewActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.logout_butt:
+                LocalStorage data = LocalStorage.getInstance();
+                SharedPreferences preferences = getSharedPreferences(LoginActivity.LOGIN_PREFERENCES, Context.MODE_PRIVATE);
+                data.setCurrentUser(preferences, LoginActivity.KEY_EMAIL, "");
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
                 break;
