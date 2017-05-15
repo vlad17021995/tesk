@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">tesk</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="password">password</string>
+    <string name="e_mail">e - mail</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="logout">Logout</string>
+    <string name="user_not_found">пользователь не найден</string>
+    <string name="incorrect_password">пароль не правильный</string>
+    <string name="mail_will_be_length_more6">почтовый адрес должен быть больше 6 символов</string>
+    <string name="pass_will_be_more4">пароль должен быть больше 4 символов</string>
+    <string name="pass_not_confirm">пароли должны совпадать</string>
+    <string name="pass_not_valid">почтоый адрес имеет неправильный формат</string>
+    <string name="user_already_exis">пользователь с такой почтой уже существует</string>
 </resources>

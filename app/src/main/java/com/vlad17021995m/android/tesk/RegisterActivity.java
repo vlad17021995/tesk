@@ -52,19 +52,19 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()){
             case R.id.register_butt:
                 if (regMailText.getText().toString().length() < 6){
-                    Toast.makeText(this, "почтовый адрес должен быть больше 6 символов", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.mail_will_be_length_more6, Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (regMailPass.getText().toString().length() < 4){
-                    Toast.makeText(this, "пароль должен быть больше 4 символов", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.pass_will_be_more4, Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (!regMailPass.getText().toString().equals(regConfirmPass.getText().toString())){
-                    Toast.makeText(this, "пароли должны совпадать", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.pass_not_confirm, Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (!data.isEmailValid(regMailText.getText().toString())){
-                    Toast.makeText(this, "почтоый адрес имеет неправильный формат", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.pass_not_valid, Toast.LENGTH_SHORT).show();
                     return;
                 }
                 int r = data.registerAccount(preferences, regMailText.getText().toString(), regMailPass.getText().toString());
@@ -72,7 +72,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     Intent intent = new Intent(this, LoginActivity.class);
                     startActivity(intent);
                 }else if (r == 1){
-                    Toast.makeText(this, "пользователь с такой почтой уже существует", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.user_already_exis, Toast.LENGTH_SHORT).show();
                 }
                 break;
         }

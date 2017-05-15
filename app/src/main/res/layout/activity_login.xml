@@ -17,14 +17,14 @@
             android:id="@+id/mailText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="e - mail"
+            android:hint="@string/e_mail"
             android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/passText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="password"
+            android:hint="@string/password"
             android:inputType="textPassword" />
     </LinearLayout>
 
@@ -38,13 +38,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Login" />
+            android:text="@string/login" />
 
         <Button
             android:id="@+id/register_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Register" />
+            android:text="@string/register" />
     </LinearLayout>
 </LinearLayout>

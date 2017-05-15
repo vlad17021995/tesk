@@ -17,21 +17,21 @@
             android:id="@+id/regmailText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="e - mail"
+            android:hint="@string/e_mail"
             android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/regpassText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="password"
+            android:hint="@string/password"
             android:inputType="textPassword" />
 
         <EditText
             android:id="@+id/regconfirmpassText3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="confirm password"
+            android:hint="@string/confirm_password"
             android:inputType="textPassword" />
     </LinearLayout>
 
@@ -46,6 +46,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Register" />
+            android:text="@string/register" />
     </LinearLayout>
 </LinearLayout>

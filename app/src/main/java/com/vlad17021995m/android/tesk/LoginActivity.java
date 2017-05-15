@@ -67,9 +67,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     intent.putExtra(KEY_EMAIL, mailText.getText().toString());
                     startActivity(intent);
                 }else if (r == 1){
-                    Toast.makeText(this, "пользователь не найден", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.user_not_found, Toast.LENGTH_SHORT).show();
                 }else {
-                    Toast.makeText(this, "пароль не правильный", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.incorrect_password, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.register_button:
